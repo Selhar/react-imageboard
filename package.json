@@ -1,0 +1,23 @@
+{
+  "name": "react-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cookie-parser": "~1.4.3",
+    "cuid": "^2.1.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "mongoose": "^5.2.17",
+    "morgan": "~1.9.0",
+    "slug": "^0.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
