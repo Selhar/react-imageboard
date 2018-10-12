@@ -1,6 +1,5 @@
-import BookListContainer from '../BookList/BookListContainer'
+import ThreadList from '../ThreadList/ThreadList'
 import React, { Component } from 'react'
-import cuid from 'cuid';
 import './pure.css'
 import './Home.css';
 
@@ -9,7 +8,7 @@ export default class Home extends Component {
     return (
       <div>
         <div className="pure-g">
-          {lists}
+          {ThreadList}
         </div>
       </div>
     )
