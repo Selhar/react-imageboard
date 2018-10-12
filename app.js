@@ -3,19 +3,17 @@ const mongoose = require('mongoose');
 const server = express();
 const compression = require('compression');
 const PORT = 8000;
-const { connection, Schema } = mongoose
-
-const morgan = require('morgan'); //remove
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
-const indexRoute = require('./server/routes/books');
+const indexRoute = require('./server/routes/home');
 
-server.use(morgan('dev')); //remove
+server.use(morgan('dev'));
 server.use(compression());
 server.use(bodyParser.json({ limit: '20mb' }));
 server.use(bodyParser.urlencoded({ limit: '20mb', extended: true }));
-server.use("/books", indexRoute);
+server.use("/home", indexRoute);
 
-mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect('mongodb://localhost:27017/imageboard');
 
 server.listen(PORT, () => console.log(`Web Server running on port ${PORT}`));

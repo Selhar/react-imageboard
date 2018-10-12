@@ -1,29 +1,28 @@
-var express = require('express');
-var router = express.Router();
-var Book = require('../models/books');
-var cuid = require('cuid');
-const categories = require('../constants/models');
+const express = require('express');
+const router = express.Router();
+const Thread = require('../models/thread');
+const cuid = require('cuid');
 
 router.get('/', function(req, res, next) {
-  Book.find({}, (error, books) => {
+  Thread.find({}, (error, threads) => {
     if(error) return res(error);
-    res.json(books);
+    res.json(threads);
   })
 });
 
 router.post('/', function(req, res, next) {
-  let book = new Book({
+  let thread = new Thread({
     author:       req.body.author,
     title:        req.body.title,
     description:  req.body.description,
     category:     req.body.category,
     cuid:         cuid()
   });
-  book.save((error) => {
+  thread.save((error) => {
     if (error){
       res.send(error);
     }
-    res.end(book.author);
+    res.end(thread.author);
   })
 });
 
