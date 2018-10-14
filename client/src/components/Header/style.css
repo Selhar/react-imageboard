@@ -1,3 +1,26 @@
-.inputfield {
-  background-color: red;
+/* input */
+.inputfield{
+  width: 350px;
+  padding: 25px 25px 0px 15px;
+  margin: 0 auto;
+}
+.inputfield input, .inputfield textarea{
+  background-color: #333;
+  border: #666666 1px solid;
+}
+
+textarea{
+  width: 226px;
+  height: 104px;
+}
+
+input[type="submit"]{
+  background: #333333;
+  border: #888 1px solid;
+  margin: #CCCCCC;
+}
+input[type="submit"]:hover {
+  background: #555;
+  border: #888 1px solid;
+  color: #32DD72;
 }
