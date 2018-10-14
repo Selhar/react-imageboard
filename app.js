@@ -12,7 +12,7 @@ server.use(morgan('dev'));
 server.use(compression());
 server.use(bodyParser.json({ limit: '20mb' }));
 server.use(bodyParser.urlencoded({ limit: '20mb', extended: true }));
-server.use("/", indexRoute);
+server.use("/threads", indexRoute);
 
 mongoose.connect('mongodb://localhost:27017/imageboard');
 

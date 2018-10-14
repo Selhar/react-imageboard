@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import addThreadToState from '../../actions/ThreadListActions'
 import {connect} from 'react-redux'
 import fetch from 'cross-fetch'
-import ThreadList from './ThreadList.js'
+import ThreadList from './Component'
 import PropTypes from 'prop-types'
 
 class ThreadListContainer extends Component {

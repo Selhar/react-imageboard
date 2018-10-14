@@ -1,5 +1,5 @@
-import Thread from '../Thread/Thread';
-import './ThreadList.css';
+import Thread from '../Thread/Component';
+import './style.css';
 import PropTypes from 'prop-types'
 import React from 'react'
 import cuid from 'cuid';
