@@ -1,4 +1,4 @@
-import './ThreadList.css'
+import './style.css'
 import React, { Component } from 'react'
 import addThreadToState from '../../actions/ThreadListActions'
 import { connect } from 'react-redux'
@@ -22,7 +22,7 @@ class ThreadListContainer extends Component {
   }
 
   render() {
-    const {threads} = this.props;
+    const { threads } = this.props;
     return (
       <ThreadList threads={threads} />
     )

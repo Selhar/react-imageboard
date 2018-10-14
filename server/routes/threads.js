@@ -3,7 +3,7 @@ const router = express.Router();
 const Thread = require('../models/thread');
 const ObjectId = require('mongodb').ObjectID;
 
-router.get('/', res => {
+router.get('/', (req, res) => {
   Thread.find({}, (error, threads) => {
     if(error) return res(error);
     res.json(threads);
