@@ -1,8 +1,8 @@
-import { ADD_BOOKS_TO_STATE } from '../constants/ActionTypes';
+import { ADD_THREADS_TO_STATE } from '../constants/ActionTypes';
 
-export default (books) => {
+export default (threads) => {
   return {
-      type: ADD_BOOKS_TO_STATE,
-      books
+      type: ADD_THREADS_TO_STATE,
+      threads
   }
 };

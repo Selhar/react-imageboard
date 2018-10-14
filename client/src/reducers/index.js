@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import books from './BookListReducer'
+import threads from './ThreadListReducer'
 
 const reducersIndex = combineReducers({
-  books,
+  threads,
 })
 
 export default reducersIndex;
