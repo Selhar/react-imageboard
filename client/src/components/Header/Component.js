@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './style.css'
 
 export default class Header extends Component {
   render() {
@@ -12,6 +13,6 @@ export default class Header extends Component {
           <input type="submit" value="Post" />
         </form>
       </div>
-    )
+    );
   }
 }
