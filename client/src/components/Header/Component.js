@@ -4,7 +4,7 @@ import './style.css'
 export default class Header extends Component {
   render() {
     return (
-      <div class="inputfield">
+      <div className="inputfield">
         <h3>Submit a new thread:</h3>
         <form method="POST" action="/" name='thread'>
           <input type='text' placeholder='Subject' name='title'></input>
