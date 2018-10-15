@@ -11,7 +11,6 @@ const Thread = new Schema({
   isReported:     { type: Boolean, default: false },
   id:             { type: Schema.Types.ObjectId, default: new ObjectId() },
   replies: [{
-    id:         { type: Schema.Types.ObjectId, default: new ObjectId() },
     text:       { type: String, required: true },
     password:   { type: String, default: cuid() },
     isReported: { type: Boolean, default: false }
