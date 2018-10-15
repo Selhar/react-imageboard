@@ -5,12 +5,12 @@ import React from 'react'
 import cuid from 'cuid';
 
 const ReplyList = ({ replies }) => {
-  console.log(replies);
+
   return (
     <div className="replies">
-      {replies.map((text, id) => {
-        <Reply text={text} id={id} keys={cuid()} />
-      })}
+      {replies.map((reply) =>
+        <Reply text={reply.text} key={cuid()} />
+      )}
     </div>
   )
 }

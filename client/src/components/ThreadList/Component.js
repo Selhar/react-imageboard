@@ -5,11 +5,12 @@ import React from 'react'
 import cuid from 'cuid';
 
 const ThreadList = ({ threads }) => {
+  console.log(threads);
   return (
     <div className="pure-u-1-1 container">
       <div className="threadlist">
         {threads.map((thread) =>
-          <Thread text={thread.text} title={thread.title} id={thread.id} replies={thread.replies} key={cuid()} />
+          <Thread thread={thread} key={cuid()} />
         )}
       </div>
     </div>

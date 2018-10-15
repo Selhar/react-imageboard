@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 class ThreadListContainer extends Component {
   componentDidMount() {
     const { addThreadToState } = this.props;
-    fetch('/threads')
+    fetch('/api')
     .then(res => res.json())
     .then(threads => {
       addThreadToState(threads);

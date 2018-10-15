@@ -6,20 +6,19 @@ import './style.css'
 class Thread extends Component {
 
   render() {
-    const { title, text, id, replies } = this.props;
-
+    const { thread } = this.props;
     return (
     <div className="thread">
       <span className="thread_title">
-      <strong>{title}</strong>
-      <a className="thread_link" href={ "/" + id }>view</a> |
-      <a className="report" href={ "/report/" + id }><strong>report</strong></a></span>
-      <span className="thread_text"> {text}</span>
+      <strong>{thread.title}</strong>
+      <a className="thread_link" href={ "/TODO" }>view</a> |
+      <a className="report" href={ "/TODO/" }><strong>report</strong></a></span>
+      <span className="thread_text"> {thread.text}</span>
 
-      <ReplyList replies={replies} />
+      <ReplyList replies={thread.replies} />
 
-      <form method="POST" action='/threads/reply' name='reply'>
-        <input value={id} name="thread_id" type="hidden" />
+      <form method="POST" action='/api/reply' name='reply'>
+        <input value={thread._id} name="thread_id" type="hidden" />
         <textarea type='text' rows="8" placeholder='Text' name='text'></textarea><br />
         <input type='text' name='password' placeholder='password'/><br />
         <input type="submit" value="Reply" />

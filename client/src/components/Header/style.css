@@ -24,3 +24,12 @@ input[type="submit"]:hover {
   border: #888 1px solid;
   color: #32DD72;
 }
+
+.icons {
+  font-size: 2em;
+  text-align: center;
+}
+
+.icon {
+  margin: 10px;
+}
