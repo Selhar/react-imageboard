@@ -9,7 +9,9 @@ class Reply extends Component {
     return (
     <div className="reply">
       <span className="textReply"> {text} </span>
-      <a className="report" href={"/reportcomment/" + id}><strong>report</strong></a>
+      <a className="report" href={"/reportcomment/" + id}>
+        <strong>report</strong>
+      </a>
     </div>
     )
   }

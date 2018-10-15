@@ -1,12 +1,12 @@
 /* input */
 .inputfield{
-  width: 350px;
+  width: 250px;
   padding: 25px 25px 0px 15px;
   margin: 0 auto;
 }
 .inputfield input, .inputfield textarea{
   background-color: #333;
-  border: #666666 1px solid;
+  border: #666 1px solid;
 }
 
 textarea{
@@ -17,7 +17,7 @@ textarea{
 input[type="submit"]{
   background: #333333;
   border: #888 1px solid;
-  margin: #CCCCCC;
+  margin: #CCC;
 }
 input[type="submit"]:hover {
   background: #555;

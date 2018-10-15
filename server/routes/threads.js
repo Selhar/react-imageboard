@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Thread = require('../models/thread');
 const ObjectId = require('mongodb').ObjectID;
+const cuid = require('cuid');
 
 router.get('/', (req, res) => {
   Thread.find({}, (error, threads) => {
@@ -20,25 +21,21 @@ router.post('/', (req, res) => {
     if (error){
       res.send(error);
     }
-    res.redirect('/');
+    res.redirect(req.originalUrl);
   })
 });
 
 router.post('/reply', (req, res) => {
-  let thread = Thread.findByIdAndUpdate(id, {
+  Thread.findByIdAndUpdate(req.body.thread_id, {
     $push: {
       replies: {
-        text: text,
+        text: req.body.text,
+        password: req.body.password || cuid(),
         _id: new ObjectId(),
       }
     }
   })
-  thread.save(error => {
-    if (error){
-      res.send(error);
-    }
-    res.redirect('/');
-  })
+  res.redirect(req.originalUrl)
 });
 
 module.exports = router;

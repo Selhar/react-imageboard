@@ -1,0 +1,15 @@
+.reply_controls input[type='text']{
+  width:200px;
+  margin-top: 15px;
+}
+.reply_controls{
+  text-align: center;
+}
+.reply form{
+  margin: 0;
+}
+.reply{
+  text-align: center;
+  width: 300px;
+  margin: 35px auto 0 auto;
+}

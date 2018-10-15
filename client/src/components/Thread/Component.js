@@ -13,9 +13,17 @@ class Thread extends Component {
       <span className="thread_title">
       <strong>{title}</strong>
       <a className="thread_link" href={ "/" + id }>view</a> |
-      <a className="report" href={ "/report/" + id }>"><strong>report</strong></a></span>
+      <a className="report" href={ "/report/" + id }><strong>report</strong></a></span>
       <span className="thread_text"> {text}</span>
+
       <ReplyList replies={replies} />
+
+      <form method="POST" action='/threads/reply' name='reply'>
+        <input value={id} name="thread_id" type="hidden" />
+        <textarea type='text' rows="8" placeholder='Text' name='text'></textarea><br />
+        <input type='text' name='password' placeholder='password'/><br />
+        <input type="submit" value="Reply" />
+      </form>
     </div>
     )
   }
