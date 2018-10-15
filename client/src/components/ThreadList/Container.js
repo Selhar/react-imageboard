@@ -2,23 +2,22 @@ import './style.css'
 import React, { Component } from 'react'
 import addThreadToState from '../../actions/ThreadListActions'
 import { connect } from 'react-redux'
-import fetch from 'cross-fetch'
 import ThreadList from './Component'
 import PropTypes from 'prop-types'
 
 class ThreadListContainer extends Component {
+  componentDidMount() {
+    const { addThreadToState } = this.props;
+    fetch('/threads')
+    .then(res => res.json())
+    .then(threads => {
+      addThreadToState(threads);
+    })
+  }
+
   static propTypes = {
     threads: PropTypes.array.isRequired,
     addThreadToState: PropTypes.func.isRequired,
-  }
-
-  componentDidMount() {
-    const { addThreadToState } = this.props;
-      fetch('/threads')
-      .then(res => res.json())
-      .then(threads => {
-        addThreadToState(threads);
-      })
   }
 
   render() {

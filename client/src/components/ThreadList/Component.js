@@ -9,7 +9,7 @@ const ThreadList = ({ threads }) => {
     <div className="pure-u-1-2 container">
       <div className="threadlist">
         {threads.map((thread) =>
-          <Thread text={thread.text} title={thread.title} password={thread.password} id={thread._id} key={cuid()} />
+          <Thread text={thread.text} title={thread.title} id={thread._id} replies={thread.replies} key={cuid()} />
         )}
       </div>
     </div>
