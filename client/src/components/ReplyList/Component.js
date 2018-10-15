@@ -5,6 +5,7 @@ import React from 'react'
 import cuid from 'cuid';
 
 const ReplyList = ({ replies }) => {
+  console.log(replies);
   return (
     <div className="replies">
       {replies.map((text, id) => {

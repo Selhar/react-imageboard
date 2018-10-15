@@ -26,15 +26,14 @@ router.post('/', (req, res) => {
 });
 
 router.post('/reply', (req, res) => {
-  Thread.findByIdAndUpdate(req.body.thread_id, {
-    $push: {
-      replies: {
-        text: req.body.text,
-        password: req.body.password || cuid(),
-        _id: new ObjectId(),
-      }
+  Thread.findByIdAndUpdate(
+    req.body.thread_id,
+    {$push: {"replies": {text: req.body.text, password: req.body.password}}},
+    {safe: true, upsert: true, new : true},
+    function(err, model) {
+        console.log(err);
     }
-  })
+);
   res.redirect(req.originalUrl)
 });
 

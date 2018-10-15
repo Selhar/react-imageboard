@@ -9,9 +9,9 @@ const Thread = new Schema({
   creation_date:  { type: Date, default: Date.now, required: true },
   password:       { type: String, default: cuid() },
   isReported:     { type: Boolean, default: false },
-  _id:        { type: Schema.Types.ObjectId, default: new ObjectId() },
+  id:             { type: Schema.Types.ObjectId, default: new ObjectId() },
   replies: [{
-    _id:        { type: Schema.Types.ObjectId, default: new ObjectId() },
+    id:         { type: Schema.Types.ObjectId, default: new ObjectId() },
     text:       { type: String, required: true },
     password:   { type: String, default: cuid() },
     isReported: { type: Boolean, default: false }
